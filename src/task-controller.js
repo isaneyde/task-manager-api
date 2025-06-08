@@ -1,4 +1,3 @@
-import express from "express";
 import taskSchema from "./task-model.js";
 
 export const createTask=async(req, res)=>{
@@ -13,3 +12,4 @@ export const createTask=async(req, res)=>{
     }
 
 }
+
