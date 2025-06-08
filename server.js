@@ -2,7 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import mongoose from "mongoose";
-import { createTask} from "./src/task-controller.js";
+import { createTask, deleteTask} from "./src/task-controller.js";
 
 dotenv.config();
 const app=express(); 
@@ -10,6 +10,7 @@ const port=process.env.PORT;
 app.use(express.json());
 app.use(cors());
 app.post("/task", createTask);
+app.delete("/task/:id", deleteTask);
 mongoose
 .connect(process.env.BD_URI)
 .then(()=>console.log("BD conectada com sucesso"))
